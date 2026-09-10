@@ -16,6 +16,11 @@
 
 <h3>A production-grade, full-stack Customer Relationship Management platform built from scratch with a modern React frontend, a RESTful Node.js/Express API, Firebase authentication, and a real-time analytics dashboard.</h3>
 
+<br/>
+
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-nexus--crm--tan--seven.vercel.app-6366F1?style=for-the-badge)](https://nexus-crm-tan-seven.vercel.app)
+[![API](https://img.shields.io/badge/🔧_API-nexus--crm--bq39.onrender.com-22C55E?style=for-the-badge)](https://nexus-crm-bq39.onrender.com)
+
 </div>
 
 ---
@@ -189,10 +194,10 @@ Uses **Jest** + **Supertest** to test API routes and controller logic.
 
 ## 📦 Deployment
 
-| Service | Platform | Notes |
+| Service | Platform | URL |
 |---|---|---|
-| Frontend | [Vercel](https://vercel.com) | Auto-deploys on push to `main` |
-| Backend | [Render](https://render.com) | Set `Root Directory` to `backend` |
+| Frontend | [Vercel](https://vercel.com) | [nexus-crm-tan-seven.vercel.app](https://nexus-crm-tan-seven.vercel.app) |
+| Backend | [Render](https://render.com) | [nexus-crm-bq39.onrender.com](https://nexus-crm-bq39.onrender.com) |
 
 Add all environment variables in each platform's dashboard. Neither Vercel nor Render reads your `.env` files from git.
 
