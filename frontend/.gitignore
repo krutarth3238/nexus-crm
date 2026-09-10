@@ -6,3 +6,7 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Internal docs
+BACKEND_INTEGRATION.md
+BRAND_CREATIVE_STUDY.md
