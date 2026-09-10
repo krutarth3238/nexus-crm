@@ -1,0 +1,6 @@
+{
+  "name": "Customer Support Ticketing CRM",
+  "description": "Production-grade frontend customer support ticketing CRM with kinetic typography hero, dense scannable ticket table, interactive Kanban board with shared layout animations, full ticket details and notes thread, and real-time analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
