@@ -91,7 +91,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate, ticketCoun
 
             <button
               type="button"
-              onClick={() => onNavigate('dashboard')}
+              onClick={() => onNavigate('login')}
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-md bg-[#FF4400] hover:bg-[#E63D00] text-white text-xs font-mono font-medium tracking-wide transition-colors shadow-sm"
             >
               <span>LAUNCH DASHBOARD</span>
@@ -133,7 +133,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate, ticketCoun
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <button
                 type="button"
-                onClick={() => onNavigate('dashboard')}
+                onClick={() => onNavigate('login')}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-[#FF4400] hover:bg-[#E63D00] text-white font-mono font-semibold text-xs tracking-wider uppercase transition-colors shadow-sm"
               >
                 <Zap className="w-4 h-4 fill-white" />

@@ -154,14 +154,22 @@ function DashboardView({
 
 function MainRouter() {
   const { tickets } = useTickets();
+  const { isAuthenticated, isLoading } = useAuth();
+
   const [currentPage, setCurrentPage] = useState<PageRoute>(() => {
-    // Check URL hash first (e.g. #/login, #/landing, #/dashboard)
     const hash = window.location.hash.replace('#/', '').replace('#', '');
     if (hash === 'landing' || hash === 'login' || hash === 'dashboard') {
       return hash as PageRoute;
     }
-    return 'landing'; // Default to landing page
+    return 'landing';
   });
+
+  // Redirect unauthenticated users away from dashboard
+  useEffect(() => {
+    if (!isLoading && currentPage === 'dashboard' && !isAuthenticated) {
+      setCurrentPage('login');
+    }
+  }, [isLoading, isAuthenticated, currentPage]);
 
   // Sync hash with browser history
   useEffect(() => {
@@ -180,14 +188,22 @@ function MainRouter() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
+  // Don't render anything while we're checking the stored session
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#F8F9FA] dark:bg-[#0D0F12]">
+        <div className="w-6 h-6 border-2 border-[#FF4400] border-t-transparent rounded-full animate-spin" />
+      </div>
+    );
+  }
+
   return (
     <div className="relative min-h-screen">
-      {/* Render Page */}
       {currentPage === 'landing' && (
         <LandingPage onNavigate={setCurrentPage} ticketCount={tickets.length} />
       )}
       {currentPage === 'login' && <LoginPage onNavigate={setCurrentPage} />}
-      {currentPage === 'dashboard' && <DashboardView onNavigatePage={setCurrentPage} />}
+      {currentPage === 'dashboard' && isAuthenticated && <DashboardView onNavigatePage={setCurrentPage} />}
     </div>
   );
 }
