@@ -98,6 +98,7 @@ nexus-crm/
 | **Testing** | Jest + Supertest |
 | **Hosting — Frontend** | Vercel |
 | **Hosting — Backend** | Render |
+| **Backend Entry Point** | `node src/server.js` |
 
 ---
 
